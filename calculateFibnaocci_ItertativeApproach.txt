@@ -1,0 +1,30 @@
+def calculateFibnaocci(n):
+  #base case
+  if n < 2:
+    return n
+
+  stack = []
+  stack.append(n)
+  #running sum to get the fib sum for a given n
+  running_sum = 0
+
+  #run a infinite loop using while on stack array
+  while(len(stack) > 0):
+    n = stack.pop()
+
+
+    #check if n 0 or 1 and get the sum 
+    if n < 2:
+      running_sum += n
+    else:
+      #just keep n-1 and n-2 to the stack
+      stack.append(n-1)
+      stack.append(n-2)
+  return running_sum
+def main():
+  print("5th fibonacci value is :" + str(calculateFibnaocci(5)))
+  print("6th fibonacci value is :" + str(calculateFibnaocci(6)))
+  print("7th fibonacci value is :" + str(calculateFibnaocci(7)))
+  print("8th fibonacci value is :" + str(calculateFibnaocci(8)))
+  print("13th fibonacci value is :" + str(calculateFibnaocci(13)))
+main() 
